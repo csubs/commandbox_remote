@@ -1,0 +1,19 @@
+{
+  "name": "commandbox_remote",
+  "version": "0.1.0",
+  "description": "Runs Commandbox with its IO connected to the network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singlebrook/commandbox_remote.git"
+  },
+  "author": "leon@singlebrook.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/singlebrook/commandbox_remote/issues"
+  },
+  "homepage": "https://github.com/singlebrook/commandbox_remote#readme"
+}
