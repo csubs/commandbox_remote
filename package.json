@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Runs Commandbox with its IO connected to the network",
   "main": "index.js",
+  "bin": {
+    "commandbox_remote": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/singlebrook/commandbox_remote/issues"
   },
-  "homepage": "https://github.com/singlebrook/commandbox_remote#readme"
+  "homepage": "https://github.com/singlebrook/commandbox_remote#readme",
+  "dependencies": {
+    "debug": "^4.3.4",
+    "queue": "^6.0.2"
+  }
 }
