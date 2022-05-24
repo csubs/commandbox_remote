@@ -15,6 +15,8 @@ const jobQueue = queue({ concurrency: 1, timeout: 30000, autostart: true });
 // The current client will always be in position 0.
 const clients = [];
 
+const port = process.env.COMMANDBOX_REMOTE_PORT || 8623;
+
 const box = childProcess.spawn("box");
 
 box.on("error", e => {
@@ -85,8 +87,8 @@ function watchForBoxInitialization(output) {
     box.stdout.on("data", returnOutput);
 
     // Don't start server until box is running.
-    server.listen(8623, "localhost", () => {
-      console.log("Listening on port 8623");
+    server.listen(port, "localhost", () => {
+      console.log(`Listening on port ${port}`);
     });
   }
 }
