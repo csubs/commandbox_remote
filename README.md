@@ -33,7 +33,7 @@ Any program that can commmunicate in plain-text over TCP should be able to talk 
 
 Here's a full NodeJS example of sending a `cfformat` command to `commandbox_remote` over TCP.
 
-```nodejs
+```node
 let formatted = '';
 const client = net.createConnection(8623, 'localhost', () => {
   client.write(`cfformat run "${filePath}"\n`, () => {
