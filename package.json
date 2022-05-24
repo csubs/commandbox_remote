@@ -1,6 +1,6 @@
 {
   "name": "commandbox_remote",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Runs Commandbox with its IO connected to the network",
   "main": "index.js",
   "bin": {
