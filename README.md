@@ -1,8 +1,16 @@
 # Overview
 
-This is a small wrapper that runs [CommandBox](https://www.ortussolutions.com/products/commandbox)
+`commandbox_remote` is a small wrapper that runs [CommandBox](https://www.ortussolutions.com/products/commandbox)
 and allows it to communicate over the network. This is useful if you want to use CommandBox in a
 non-interactive style without incurring the startup penalty for each command.
+
+## Warning: Remote Access!
+
+*This essentially starts a network-accessible shell, so it should be used with extreme caution!*
+
+The server only listens on `localhost` (IPv4), so that helps to limit access, but a malicious program
+running on your computer can run `commandbox` commands as you, without having to authenticate itself.
+*USE AT YOUR OWN RISK!*
 
 ## Usage
 
@@ -20,6 +28,8 @@ You can optionally specify a port to use by setting the env var `COMMANDBOX_REMO
 e.g. `COMMANDBOX_REMOTE_PORT=4567 npx commandbox_remote`. The default port is 8623.
 
 ### Communicating with CommandBox
+
+Any program that can commmunicate in plain-text over TCP should be able to talk to `commandbox_remote`.
 
 Here's a full NodeJS example of sending a `cfformat` command to `commandbox_remote` over TCP.
 
