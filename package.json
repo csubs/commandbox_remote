@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/singlebrook/commandbox_remote.git"
+    "url": "git+https://github.com/csubs/commandbox_remote.git"
   },
   "author": "leon@singlebrook.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/singlebrook/commandbox_remote/issues"
+    "url": "https://github.com/csubs/commandbox_remote/issues"
   },
-  "homepage": "https://github.com/singlebrook/commandbox_remote#readme",
+  "homepage": "https://github.com/csubs/commandbox_remote#readme",
   "dependencies": {
     "debug": "^4.3.4",
     "queue": "^6.0.2"
