@@ -21,7 +21,7 @@ const box = childProcess.spawn("box");
 
 box.on("error", e => {
   console.error(
-    `Failed to start \`box\`. Maybe you need to install Commandbox? (https://commandbox.ortusbooks.com/setup/installation) ${e}`
+    `Failed to start \`box\`. Make sure that Commandbox is installed (https://commandbox.ortusbooks.com/setup/installation) and on your path. (${e}`
   );
   process.exit(1);
 });
