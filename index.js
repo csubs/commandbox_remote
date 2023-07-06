@@ -8,6 +8,8 @@ const debug = require("debug")("commandbox_remote");
 const net = require("net");
 const queue = require("queue");
 
+const boxPrompt = /CommandBox[>:]/;
+
 // Buffer for incoming commands since `box` can only process one at a time.
 const jobQueue = queue({ concurrency: 1, timeout: 30000, autostart: true });
 
@@ -64,7 +66,7 @@ function addCommandToQueue(cmd) {
 function returnOutput(output) {
   debug(`Received ${output.length} bytes of data from box, starting with: ${output.slice(0, 20).toString()}`);
   // We only handle one command per connection, so close the connection once the prompt is shown.
-  if (output.toString().match(/CommandBox> $/)) {
+  if (output.toString().match(boxPrompt)) {
     console.info(`Processed command in ${new Date() - startTime}ms`);
     clients[0].end();
     startTime = null;
@@ -81,7 +83,7 @@ function sendCommandToBox(cmd) {
 }
 
 function watchForBoxInitialization(output) {
-  if (!boxInitialized && output.toString().match(/CommandBox[>:]/)) {
+  if (!boxInitialized && output.toString().match(boxPrompt)) {
     boxInitialized = true;
     console.info(`box is initialized and ready for input`);
     box.stdout.on("data", returnOutput);
