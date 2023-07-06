@@ -81,7 +81,7 @@ function sendCommandToBox(cmd) {
 }
 
 function watchForBoxInitialization(output) {
-  if (!boxInitialized && output.toString().match(/CommandBox> $/)) {
+  if (!boxInitialized && output.toString().match(/CommandBox[>:]/)) {
     boxInitialized = true;
     console.info(`box is initialized and ready for input`);
     box.stdout.on("data", returnOutput);
