@@ -14,15 +14,15 @@ running on your computer can run `commandbox` commands as you, without having to
 
 ## Usage
 
-`npx commandbox_remote`
+`box_config_offlineMode=true npx commandbox_remote`
 
 or
 
-`npm exec commandbox_remote`
+`box_config_offlineMode=true npm exec commandbox_remote`
 
 or
 
-`yarn exec commandbox_remote`
+`box_config_offlineMode=true yarn exec commandbox_remote`
 
 You can optionally specify a port to use by setting the env var `COMMANDBOX_REMOTE_PORT`,
 e.g. `COMMANDBOX_REMOTE_PORT=4567 npx commandbox_remote`. The default port is 8623.
